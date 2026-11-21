@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tameo • Controle, organize e faça seu negócio crescer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo"><span class="logo-icon">🏛️</span> TAMEO</div>
+        <div class="nav-links">
+            <a href="#" class="active">Início</a>
+            <a href="#solucoes">Recursos</a>
+            <a href="#detalhes">Como funciona</a>
+            <a href="#planos">Planos</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Controle, organize<br>e faça seu negócio<br><span>crescer.</span></h1>
+            <p>O app completo para MEIs, freelancers e pequenos empreendedores gerenciarem suas finanças, emitirem notas fiscais e acompanharem o fluxo de caixa de forma simples e intuitiva.</p>
+            
+            <div class="cta-group">
+                <a href="#detalhes" class="btn-primary-large">Explore o App abaixo ↓</a>
+                <div class="store-badges">
+                    <a href="#" class="badge">
+                        <div class="badge-icon">▶</div>
+                        <div class="badge-text"><span>Disponível no</span><b>Google Play</b></div>
+                    </a>
+                    <a href="#" class="badge">
+                        <div class="badge-icon"></div>
+                        <div class="badge-text"><span>Baixar na</span><b>App Store</b></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MOCKUP INTERATIVO -->
+        <div class="hero-mockup">
+            <div class="phone-hero">
+                <div class="screen-content">
+                    
+                    <!-- TELA 1: HOME -->
+                    <div id="app-home" class="app-screen active">
+                        <div class="s-header">
+                            <div>
+                                <div class="s-sub">Olá, Lucas 👋</div>
+                                <h2>Início</h2>
+                            </div>
+                            <div class="s-bell">🔔</div>
+                        </div>
+                        
+                        <div class="s-card s-card-hero">
+                            <div class="s-label">Fluxo de caixa • saldo projetado</div>
+                            <div class="s-value">R$ 5.240,00</div>
+                            <div class="s-sub-light">Positivo nos próximos 7 dias</div>
+                            <svg viewBox="0 0 200 40" width="100%" style="display:block; margin-top:10px;">
+                                <path d="M0,30 Q20,20 40,25 T80,15 T120,20 T160,10 T200,5" fill="none" stroke="#fff" stroke-width="2"/>
+                                <circle cx="200" cy="5" r="3" fill="#fff"/>
+                            </svg>
+                            <div class="s-pills">
+                                <div class="s-pill">Receitas<b>R$ 8.450</b></div>
+                                <div class="s-pill">Despesas<b>R$ 3.210</b></div>
+                            </div>
+                        </div>
+                        
+                        <div class="s-section-title">Acesse suas áreas</div>
+                        <div class="s-grid">
+                            <div class="s-item" onclick="changeScreen('caixa')">
+                                <div class="s-icon">💰</div>
+                                <div class="s-item-title">Controle de Caixa</div>
+                                <div class="s-item-desc">Ver lançamentos</div>
+                            </div>
+                            <div class="s-item" onclick="changeScreen('cobrancas')">
+                                <div class="s-icon">📄</div>
+                                <div class="s-item-title">Cobranças</div>
+                                <div class="s-item-desc s-text-red">3 atrasados</div>
+                            </div>
+                            <div class="s-item" onclick="changeScreen('precificacao')">
+                                <div class="s-icon">🧮</div>
+                                <div class="s-item-title">Valor da Hora</div>
+                                <div class="s-item-desc">Calcular preço</div>
+                            </div>
+                            <div class="s-item" onclick="changeScreen('fiscal')">
+                                <div class="s-icon">🛡️</div>
+                                <div class="s-item-title">Guia DAS</div>
+                                <div class="s-item-desc">Vence 20/05</div>
+                            </div>
+                        </div>
+                        
+                        <div class="s-card">
+                            <div class="s-label">Teto do MEI</div>
+                            <div class="s-progress-text">R$ 54.000 / R$ 81.000</div>
+                            <div class="s-progress"><div class="s-progress-bar" style="width: 67%;"></div></div>
+                            <div class="s-sub" style="text-align:right; margin-top:4px;">67% usado</div>
+                        </div>
+                    </div>
+
+                    <!-- TELA 2: CAIXA -->
+                    <div id="app-caixa" class="app-screen">
+                        <div class="s-header">
+                            <button class="s-back" onclick="changeScreen('home')">‹</button>
+                            <h2>Controle de Caixa</h2>
+                            <span style="width:20px;"></span>
+                        </div>
+                        <div class="s-grid" style="grid-template-columns: 1fr 1fr; margin-bottom:0;">
+                            <div class="s-card" style="padding:10px; text-align:center;">
+                                <div class="s-label">Receitas</div>
+                                <div class="s-value" style="font-size:16px; color:#16A34A;">R$ 8.450</div>
+                            </div>
+                            <div class="s-card" style="padding:10px; text-align:center;">
+                                <div class="s-label">Despesas</div>
+                                <div class="s-value" style="font-size:16px; color:#EF4444;">R$ 3.210</div>
+                            </div>
+                        </div>
+                        <div class="s-card" style="margin-top:0;">
+                            <div class="s-item-title" style="margin-bottom:10px;">Movimentações</div>
+                            <div class="s-list-item">
+                                <div style="display:flex; gap:8px; align-items:center;">
+                                    <span class="s-icon-bg green">↓</span>
+                                    <div><div class="s-item-title" style="font-size:12px;">Projeto Identidade Visual</div><div class="s-sub">05/05</div></div>
+                                </div>
+                                <div style="color:#16A34A; font-weight:bold; font-size:12px;">+ R$ 1.800</div>
+                            </div>
+                            <div class="s-list-item">
+                                <div style="display:flex; gap:8px; align-items:center;">
+                                    <span class="s-icon-bg red">↑</span>
+                                    <div><div class="s-item-title" style="font-size:12px;">Assinatura Figma</div><div class="s-sub">04/05</div></div>
+                                </div>
+                                <div style="font-weight:bold; font-size:12px;">- R$ 75</div>
+                            </div>
+                            <div class="s-list-item">
+                                <div style="display:flex; gap:8px; align-items:center;">
+                                    <span class="s-icon-bg red">↑</span>
+                                    <div><div class="s-item-title" style="font-size:12px;">Internet e Coworking</div><div class="s-sub">03/05</div></div>
+                                </div>
+                                <div style="font-weight:bold; font-size:12px;">- R$ 420</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TELA 3: COBRANÇAS -->
+                    <div id="app-cobrancas" class="app-screen">
+                        <div class="s-header">
+                            <button class="s-back" onclick="changeScreen('home')">‹</button>
+                            <h2>Cobranças</h2>
+                            <button class="s-btn-small">+ Nova</button>
+                        </div>
+                        <div class="s-grid" style="grid-template-columns: 1fr 1fr 1fr; margin-bottom:0;">
+                            <div class="s-card" style="padding:8px; text-align:center;">
+                                <div class="s-label">Pago</div>
+                                <div class="s-value" style="font-size:18px; color:#16A34A;">12</div>
+                            </div>
+                            <div class="s-card" style="padding:8px; text-align:center;">
+                                <div class="s-label">Pendente</div>
+                                <div class="s-value" style="font-size:18px; color:#2563EB;">8</div>
+                            </div>
+                            <div class="s-card" style="padding:8px; text-align:center;">
+                                <div class="s-label">Atrasado</div>
+                                <div class="s-value" style="font-size:18px; color:#EF4444;">3</div>
+                            </div>
+                        </div>
+                        <div class="s-card" style="background:#EFF6FF; border:none; display:flex; gap:8px; align-items:center; padding:10px;">
+                            <span style="font-size:16px;">🔔</span>
+                            <div style="font-size:10px; color:#1E40AF;"><b>Lembrete:</b> Vence em 2 dias - Site Institucional (R$ 2.400)</div>
+                        </div>
+                        <div class="s-card">
+                            <div class="s-list-item" style="border-bottom:1px solid #E2E8F0;">
+                                <div>
+                                    <div class="s-item-title" style="font-size:12px;">Criação de site</div>
+                                    <div class="s-sub">10/05/2026</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div style="font-weight:bold; font-size:12px;">R$ 2.400</div>
+                                    <div class="s-badge blue">Pendente</div>
+                                </div>
+                            </div>
+                            <div class="s-list-item" style="border-bottom:1px solid #E2E8F0;">
+                                <div>
+                                    <div class="s-item-title" style="font-size:12px;">Gestão de Redes</div>
+                                    <div class="s-sub">02/05/2026</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div style="font-weight:bold; font-size:12px;">R$ 950</div>
+                                    <div class="s-badge red">Atrasado</div>
+                                </div>
+                            </div>
+                            <div class="s-list-item" style="border:none;">
+                                <div>
+                                    <div class="s-item-title" style="font-size:12px;">Identidade Visual</div>
+                                    <div class="s-sub">05/05/2026</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div style="font-weight:bold; font-size:12px;">R$ 1.800</div>
+                                    <div class="s-badge green">Pago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TELA 4: PRECIFICAÇÃO -->
+                    <div id="app-precificacao" class="app-screen">
+                        <div class="s-header">
+                            <button class="s-back" onclick="changeScreen('home')">‹</button>
+                            <h2>Precificação</h2>
+                            <span style="width:20px;"></span>
+                        </div>
+                        <div class="s-card">
+                            <div class="s-item-title" style="margin-bottom:10px;">Calculadora de Hora</div>
+                            <div class="s-form-row"><label>Custos Fixos</label><input type="text" value="1500" readonly></div>
+                            <div class="s-form-row"><label>Meta Salarial</label><input type="text" value="3000" readonly></div>
+                            <div class="s-form-row"><label>Reservas</label><input type="text" value="500" readonly></div>
+                            <div class="s-form-row"><label>Horas / Mês</label><input type="text" value="120" readonly></div>
+                        </div>
+                        <div class="s-card" style="background:var(--primary); color:white; text-align:center;">
+                            <div style="font-size:10px; opacity:0.8;">Sua hora vale</div>
+                            <div style="font-size:24px; font-weight:800; margin:5px 0;">R$ 41,67</div>
+                            <div style="font-size:10px; opacity:0.8;">Base mensal: R$ 5.000,00</div>
+                        </div>
+                    </div>
+
+                    <!-- TELA 5: FISCAL -->
+                    <div id="app-fiscal" class="app-screen">
+                        <div class="s-header">
+                            <button class="s-back" onclick="changeScreen('home')">‹</button>
+                            <h2>Fiscal</h2>
+                            <span style="width:20px;"></span>
+                        </div>
+                        <div class="s-card" style="border-left:4px solid #16A34A; padding:10px;">
+                            <div class="s-label">Situação Atual</div>
+                            <div class="s-value" style="color:#16A34A; font-size:18px;">Regular ✓</div>
+                            <div class="s-sub">Evite multas e pendências</div>
+                        </div>
+                        <div class="s-card">
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <div>
+                                    <div class="s-item-title" style="font-size:13px;">Guia DAS</div>
+                                    <div class="s-sub">Maio/2026 • Vence 20/05</div>
+                                </div>
+                                <div class="s-value" style="font-size:16px; color:var(--primary);">R$ 86,05</div>
+                            </div>
+                            <button class="s-btn-full" style="margin-top:10px;">Pagar Guia DAS</button>
+                        </div>
+                        <div class="s-card">
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <div>
+                                    <div class="s-item-title" style="font-size:13px;">Declaração Anual</div>
+                                    <div class="s-sub">DASN • Prazo 31/05</div>
+                                </div>
+                                <div class="s-badge yellow">A entregar</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- NAVBAR INTERNA DO APP -->
+                <div class="nav-bottom">
+                    <span class="app-nav-item active" data-target="home" onclick="changeScreen('home')">▦<br>Início</span>
+                    <span class="app-nav-item" data-target="caixa" onclick="changeScreen('caixa')">💰<br>Caixa</span>
+                    <span class="app-nav-item" data-target="cobrancas" onclick="changeScreen('cobrancas')">🧾<br>Cobranças</span>
+                    <span class="app-nav-item" data-target="precificacao" onclick="changeScreen('precificacao')">🧮<br>Preço</span>
+                    <span class="app-nav-item" data-target="fiscal" onclick="changeScreen('fiscal')">🛡<br>Fiscal</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO SOLUÇÕES -->
+    <section class="solutions" id="solucoes">
+        <div class="container">
+            <div class="solutions-text">
+                <span class="tag">Tudo o que você precisa em um só lugar</span>
+                <h2>Soluções completas para a sua rotina</h2>
+                <p>Simplifique a gestão do seu negócio com ferramentas poderosas e fáceis de usar.</p>
+                <a href="#detalhes" class="btn-secondary">Conheça os detalhes →</a>
+            </div>
+            <div class="solutions-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Fluxo de Caixa</h3>
+                    <p>Acompanhe suas entradas e saídas em tempo real.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧾</div>
+                    <h3>Emissão de Notas</h3>
+                    <p>Emita NF-e e NFS-e de forma rápida e descomplicada.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Gestão de Cobranças</h3>
+                    <p>Organize seus boletos, contas e recebimentos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧮</div>
+                    <h3>Calculadora de Preço</h3>
+                    <p>Defina o preço ideal para seus serviços e produtos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Relatórios Inteligentes</h3>
+                    <p>Visualize seu desempenho com relatórios completos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Conformidade Fiscal</h3>
+                    <p>Mantenha-se em dia com suas obrigações fiscais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE DETALHAMENTO DAS ÁREAS -->
+    <section class="details-section" id="detalhes">
+        <div class="details-header">
+            <span class="tag blue-tag">Conheça por dentro</span>
+            <h2>O que cada área do app faz por você</h2>
+            <p>Clique nos cards acima ou navegue pelo menu inferior do celular para explorar. Abaixo, o detalhamento de cada módulo do Tameo.</p>
+        </div>
+
+        <div class="details-container">
+            
+            <div class="detail-card">
+                <div class="detail-icon">▦</div>
+                <h3>Início (Dashboard)</h3>
+                <p>A sua central de comando. Aqui você tem a visão geral do negócio em poucos segundos.</p>
+                <ul>
+                    <li><b>Fluxo de Caixa:</b> Saldo projetado com gráfico dos próximos 7 dias.</li>
+                    <li><b>Resumo Financeiro:</b> Total de receitas e despesas do mês atual.</li>
+                    <li><b>Acesso Rápido:</b> Atalhos para todas as áreas do app.</li>
+                    <li><b>Teto do MEI:</b> Barra de progresso mostrando quanto do limite anual (R$ 81.000) já foi usado.</li>
+                </ul>
+            </div>
+
+            <div class="detail-card">
+                <div class="detail-icon">💰</div>
+                <h3>Controle de Caixa</h3>
+                <p>O coração financeiro do seu dia a dia. Saiba exatamente para onde o dinheiro está indo.</p>
+                <ul>
+                    <li><b>Lançamentos:</b> Registro de entradas (verde) e saídas (vermelho) com data e descrição.</li>
+                    <li><b>Filtro Rápido:</b> Veja o total de receitas e despesas do período.</li>
+                    <li><b>Histórico:</b> Lista ordenada das movimentações mais recentes.</li>
+                </ul>
+            </div>
+
+            <div class="detail-card">
+                <div class="detail-icon">🧾</div>
+                <h3>Gestão de Cobranças</h3>
+                <p>Fim da inadimplência. Controle quem já pagou, quem está pendente e quem está atrasado.</p>
+                <ul>
+                    <li><b>Status por Cores:</b> Pago (Verde), Pendente (Azul) e Atrasado (Vermelho).</li>
+                    <li><b>Lembretes:</b> Alerta automático de vencimento próximo (ex: "Vence em 2 dias").</li>
+                    <li><b>Resumo:</b> Contagem rápida de quantos boletos estão em cada status.</li>
+                    <li><b>Ação:</b> Botão para emitir uma nova cobrança rapidamente.</li>
+                </ul>
+            </div>
+
+            <div class="detail-card">
+                <div class="detail-icon">🧮</div>
+                <h3>Precificação (Valor da Hora)</h3>
+                <p>Nunca mais cobre barato ou trabalhe no prejuízo. Descubra o valor real do seu trabalho.</p>
+                <ul>
+                    <li><b>Custos Fixos:</b> Aluguel, internet, softwares, etc.</li>
+                    <li><b>Meta Salarial:</b> Quanto você deseja receber por mês.</li>
+                    <li><b>Reservas:</b> Provisão para férias e 13º salário.</li>
+                    <li><b>Cálculo:</b> O app divide tudo pelas horas trabalhadas e mostra o valor mínimo da sua hora.</li>
+                </ul>
+            </div>
+
+            <div class="detail-card">
+                <div class="detail-icon">🛡️</div>
+                <h3>Área Fiscal</h3>
+                <p>Burocracia resolvida. Mantenha sua empresa regular sem sustos ou multas.</p>
+                <ul>
+                    <li><b>Situação:</b> Indicador visual de que está tudo regular.</li>
+                    <li><b>Guia DAS:</b> Valor mensal e data de vencimento, com botão para pagar.</li>
+                    <li><b>DASN:</b> Lembrete para entrega da declaração anual.</li>
+                    <li><b>Histórico:</b> Comprovantes de guias pagas anteriormente.</li>
+                </ul>
+            </div>
+
+            <div class="detail-card">
+                <div class="detail-icon">📈</div>
+                <h3>Relatórios do MEI</h3>
+                <p>Decisões baseadas em dados, não em achismos.</p>
+                <ul>
+                    <li><b>Receita Mensal:</b> Gráfico de barras dos últimos 12 meses.</li>
+                    <li><b>Receita Acumulada:</b> Linha do tempo mostrando o crescimento.</li>
+                    <li><b>Alerta do Limite:</b> Linha vermelha indicando o teto de R$ 81.000 para planejamento.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo"><span class="logo-icon">🏛️</span> TAMEO</div>
+        <div class="footer-copy">Seu parceiro na gestão financeira.</div>
+        <div class="footer-badges">
+            <a href="#" class="badge" style="padding: 6px 12px;">
+                <div class="badge-text"><span>Disponível no</span><b>Google Play</b></div>
+            </a>
+            <a href="#" class="badge" style="padding: 6px 12px;">
+                <div class="badge-text"><span>Baixar na</span><b>App Store</b></div>
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
